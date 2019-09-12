@@ -1,3 +1,1 @@
-<script>
-    console.log('Hello JavaScript')
-</script>
+<script src="index.js"></script>
