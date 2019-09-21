@@ -20,16 +20,14 @@
                     var iptMny = prompt('请输入取款金额')
                     if(iptMny <= month){
                         alert('取款后余额为 : ' + (month - iptMny))
-                        break
                     }else{
                         alert('余额不足，请重新输入')
                     }
-                }while(true)
-                break
+                }while(iptMny > month)
             }else{
                 alert('请重新输入卡号与密码')
             }
-        }while(true)
+        }while(iptId !== cardId || iptPsd !== psd)
     </script>
 </body>
 </html>
