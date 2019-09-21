@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var cardId = '123456789',
+            psd = '123456',
+            month = 200000
+        do{
+            var iptId = prompt('请输入银行卡号'),
+                iptPsd = prompt('请输入密码')
+            if(iptId === cardId && iptPsd === psd){
+                alert('账户当前余额为 : ' + month)
+                do{
+                    var iptMny = prompt('请输入取款金额')
+                    if(iptMny <= month){
+                        alert('取款后余额为 : ' + (month - iptMny))
+                        break
+                    }else{
+                        alert('余额不足，请重新输入')
+                    }
+                }while(true)
+                break
+            }else{
+                alert('请重新输入卡号与密码')
+            }
+        }while(true)
+    </script>
+</body>
+</html>
