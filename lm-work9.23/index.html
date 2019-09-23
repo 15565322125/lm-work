@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .blue{
+            background-color: blue !important;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <script>
+        var oDiv = document.getElementsByTagName('div')
+        for(var i=0; i<oDiv.length; i++){
+            oDiv[i].style.width = '50px'
+            oDiv[i].style.height = '50px'
+            oDiv[i].style.backgroundColor = 'red'
+            oDiv[i].style.marginRight = '20px'
+            oDiv[i].style.cssFloat = 'left'
+        }
+        oDiv[2].className = 'blue'
+    </script>
+</body>
+</html>
