@@ -1,0 +1,33 @@
+@font-face {font-family: "iconfont";
+    src: url('//at.alicdn.com/t/font_1433569_i8b3d57pt2.eot?t=1569330151074'); /* IE9 */
+    src: url('//at.alicdn.com/t/font_1433569_i8b3d57pt2.eot?t=1569330151074#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAAOwAAsAAAAAB/gAAANiAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEIGVgCDKgqDGIJjATYCJAMUCwwABCAFhG0HTRvsBhFVlP9kPwrc2A2qfPoskNxXveZTzkHw/GfXd19VtUdLumfWQCTnPPmXNgOQztZ0jG0RJkK1ZUw7/fQdSbvzl6aM8ziNUggJwtEAAQRw//97p83jgc1rz3JZ7//2pjEXdQKMJwe6B0aBFGiBJOotw6tdCgd9GwL4VKcp0rf/0BAXA1kkgCyaP3c6bsaDwchxF8Gu2GmQY1i4ar/KAI4G35cvtBYXFJaGrBw5p98ser7v8KGi3pbeZpJHAU9nB+R9oIGmgAFZUOmchY4iTdH45n2GjoCLi4L3Hd4Xf6iYTmNaBeIoSpf+4YFGYRAQG5IbAaAnKMyVYY6g4X0xgoIPFRAMfKhIPMc9FgA+4AErgCvArKpUF36yinimoimTiMTmFhePLSpKFRSEhYXJA56NuKTfcKVPMIWI+PhXH1dU55/Ui954VkVfeFrfl8kRHd14oW7s+t1K6ty9evGDNy5eFH0xDE+VT505c/ZsueTYs6dPn9LFH8YWvksWvA2L3i89u736hAOnUNtOH6yQ3nqQaVNloAwA4wBJWANkYHFq+qfQSyZvJ11h+Brcm/TwwcParfpX6j+gf53na6NfI/fnX3PWRr5G7zl1+tde93XnV9q+3vByW2zZT2ef/8fEoo1/pqL7nO6T/z167f7/aFNlA1/17c7XO2MeLajCNvOiZs0XMGagpnmR3HI2K4yEPzLHRM85F5xz0TEsg9ylU6oIQHdRLwH0FHXo5/2G8GLNLlPjXf+5gQHgxcO2H4Kq9Laht8EfwJ3xr8IdO4xFEhPXmtHKJUa2pY4mbj0fnw9+UQJK+03jLqeW2IWrYAyKoxporrpUw2wKlkBbsLl6gK+Jw/5AGaJJ5gGNvRCIhDcoMc9AS/hQDfMLlvL+YEvUBF+q4YmB+sWDjaCrGID3hNjngphFB2H+EcMqcyVNBuwrShn7YWQ5+fgBC5Qp1pS3cKxKQMI57NF9mGUMRjhBX61I1axtm6qeZPmc1wb6EMilUAB4nkDMxwrk9VaDwuePUKiScUlDW1PwColSPDkYsTgdqAdl0antVh4p3YTGlCKACJYDe2RHGY0wYKqnJZBPWaIBIWPNhm7UVWktr87fcR/gI2uslGgxYomN/Vs4k4u2G4/Hi/6Tq0fsFuGo4zEFhloNAAA=') format('woff2'),
+    url('//at.alicdn.com/t/font_1433569_i8b3d57pt2.woff?t=1569330151074') format('woff'),
+    url('//at.alicdn.com/t/font_1433569_i8b3d57pt2.ttf?t=1569330151074') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+    url('//at.alicdn.com/t/font_1433569_i8b3d57pt2.svg?t=1569330151074#iconfont') format('svg'); /* iOS 4.1- */
+  }
+  
+  .iconfont {
+    font-family: "iconfont" !important;
+    font-size: 16px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  .icon-person:before {
+    content: "\e718";
+  }
+  
+  .icon-ai227:before {
+    content: "\e6d7";
+  }
+  
+  .icon-youxiang1:before {
+    content: "\e637";
+  }
+  
+  .icon-bofang:before {
+    content: "\e717";
+  }
+  
