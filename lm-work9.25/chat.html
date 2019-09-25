@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body, p{
+            margin: 0;
+        }
+        ul{
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        button{
+            padding: 0;
+            border: none;
+            outline: none;
+        }
+        #chat{
+            width: 400px;
+            margin: 0 auto;
+            border: 1px solid black;
+            border-radius: 10px;
+        }
+        #list{
+            min-height: 600px;
+            padding: 10px;
+        }
+        #say{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 10px;
+        }
+        #say p{
+            width: 70%;
+            min-height: 30px;
+            padding: 0 10px;
+            border: 1px solid gray;
+            outline: none;
+            line-height: 30px;
+            border-radius: 4px;
+        }
+        #say button{
+            width: 20%;
+            height: 30px;
+            background-color: rgb(51,136,255);
+            color: #fff;
+        }
+        #say button:active{
+            background-color: rgb(49,126,243);
+        }
+        #list li:nth-child(odd){
+            text-align: right;
+        }
+        #list li:nth-child(odd)::after{
+            color: blue;
+            content: " :💗";
+        }
+        #list li:nth-child(even){
+            text-align: left;
+        }
+        #list li:nth-child(even)::before{
+            color: red;
+            content: "⭐: ";
+        }
+    </style>
+</head>
+<body>
+    <div id="chat">
+        <ul id="list">
+            
+        </ul>
+        <div id="say">
+            <p contenteditable="true" id="ipt"></p>
+            <button id="btn">发送</button>
+        </div>
+    </div>
+    <script>
+        var list = document.getElementById('list'),
+            ipt = document.getElementById('ipt'),
+            btn = document.getElementById('btn')
+        btn.onclick = function(){
+            if(ipt.innerText != ''){
+                var li = document.createElement('li')
+                li.appendChild(document.createTextNode(ipt.innerText))
+                list.appendChild(li)
+                ipt.innerHTML = ''
+            }
+        }
+    </script>
+</body>
+</html>
