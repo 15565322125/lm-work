@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+        }
+        form{
+            width: 500px;
+            margin: 100px auto 0;
+        }
+        span{
+            display: block;
+            visibility: hidden;
+            height: 24px;
+            margin-left: 100px;
+            line-height: 24px;
+        }
+        span.error{
+            color: red;
+        }
+        span.success{
+            color: green;
+        }
+        span.info{
+            color: yellow;
+        }
+        input.error{
+            border-color: red;
+        }
+        input.success{
+            border-color: green;
+        }
+        input.info{
+            border-color: yellow;
+        }
+        .form-item{
+            margin-bottom: 10px;
+        }
+        label{
+            display: inline-block;
+            width: 100px;
+            text-align: right;
+        }
+        #btn{
+            margin-left: 100px;
+            border: none;
+            background-color: rgb(0,140,140);
+            color: #fff;
+        }
+        #txt, #psd{
+            border-width: 1px;
+            border-style: solid;
+            text-indent: 10px;
+        }
+        input{
+            width: 300px;
+            height: 30px;
+            padding: 0;
+            outline: none;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <form action="" autocomplete="off">
+        <div class="form-item">
+            <label for="txt">用户名：</label>
+            <input type="text" id="txt" placeholder="请输入用户名">
+            <span id="txtError"></span>
+        </div>
+        <div class="form-item">
+            <label for="psd">密码：</label>
+            <input type="password" id="psd" placeholder="请输入密码">
+            <span id="psdError"></span>
+        </div>
+        <input type="submit" value="注册" id="btn">
+    </form>
+    <script>
+        var nameArr = ['tom', 'jack', 'lili']
+        txt.onfocus = function(){
+            txtError.style.visibility = 'visible'
+            checkTxt()
+        }
+        txt.oninput = function(){
+            checkTxt()
+        }
+        txt.onblur = function(){
+            checkTxt()
+        }
+
+        psd.onfocus = function(){
+            psdError.style.visibility = 'visible'
+            checkPsd()
+        }
+        psd.oninput = function(){
+            checkPsd()
+        }
+        psd.onblur = function(){
+            checkPsd()
+        }
+
+        btn.onclick = function(e){
+            if(txt.value !== '' && psd.value !== '' && txtError.className === 'success' && psdError.className === 'success'){
+                alert('注册成功')
+            }else{
+                e.preventDefault()
+                alert('注册失败')
+            }
+        }
+
+        function checkTxt(){
+            if(txt.value === ''){
+                txtError.innerHTML = '请输入用户名'
+                txtError.className = 'error'
+                txt.className = 'error'
+            }else if(nameArr.indexOf(txt.value) === -1){
+                txtError.innerHTML = '该用户名可以使用'
+                txtError.className = 'success'
+                txt.className = 'success'
+            }else{
+                txtError.innerHTML = '该用户名已存在'
+                txtError.className = 'info'
+                txt.className = 'info'
+            }
+        }
+
+        function checkPsd(){
+            if(psd.value === ''){
+                psdError.innerHTML = '请输入密码'
+                psdError.className = 'error'
+                psd.className = 'error'
+            }else if(psd.value.length < 6 || psd.value.length > 12){
+                psdError.innerHTML = '密码必须为6~12位'
+                psdError.className = 'info'
+                psd.className = 'info'
+            }else{
+                psdError.innerHTML = '该密码可以使用'
+                psdError.className = 'success'
+                psd.className = 'success'
+            }
+        }
+    </script>
+</body>
+</html>
