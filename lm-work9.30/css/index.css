@@ -1,0 +1,291 @@
+#footer{
+    width: 100%;
+    height: 429px;
+}
+header{
+    overflow: hidden;
+    border-bottom: 1px solid rgb(235,235,235);
+    line-height: 85px;
+}
+header .left{
+    float: left;
+}
+header .left > a{
+    margin-right: 40px;
+    color: #787878;
+}
+header .left > a:hover{
+    color: #000;
+}
+header .left > a:nth-child(1){
+    margin-left: 90px;
+}
+header .right{
+    float: right;
+}
+header .right li{
+    position: relative;
+    float: left;
+    border-left: 1px solid rgb(235,235,235);
+}
+header .right li:nth-child(1){
+    width: 201px;
+}
+header .right li a{
+    display: block;
+    width: 85px;
+    height: 85px;
+    text-align: center;
+}
+header .right li a i{
+    color: #000;
+    font-weight: 700;
+    font-size: 20px;
+}
+header .right li .icon-fangdajing{
+    position: absolute;
+    top: 0;
+    left: 30px;
+    color: rgb(120,120,120);
+    font-size: 20px;
+}
+header .right li input{
+    width: 100%;
+    height: 85px;
+    text-indent: 60px;
+}
+header .right li input::-webkit-input-placeholder{
+    font-weight: 700;
+}
+
+.banner{
+    height: 600px;
+    background: url(../img/bg-1.jpg)
+}
+.banner .content{
+    position: relative;
+    width: 1110px;
+    height: 100%;
+    margin: 0 auto;
+}
+.banner .content .txt{
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.banner .content .txt span{
+    color: #787878;
+    font-size: 18px;
+}
+.banner .content .txt h1{
+    margin: 10px 0 50px;
+    font-size: 60px;
+}
+.banner .content .txt button{
+    width: 208px;
+    height: 50px;
+    background-color: #0315ff;
+    color: #fff;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.summer{
+    display: flex;
+    justify-content: space-between;
+    width: 1110px;
+    margin: 80px auto;
+}
+.summer .item{
+    width: 350px;
+    height: 240px;
+}
+.summer .item a{
+    display: block;
+    height: 100%;
+    background-color: rgba(255,255,255,.6);
+    color: #000;
+    font-size: 30px;
+    font-weight: 700;
+    text-align: center;
+    line-height: 240px;
+}
+.summer .item a:hover{
+    color: #0315ff;
+}
+.summer .item:nth-child(1){
+    background: url(../img/bg-2.jpg) no-repeat center/cover;
+}
+.summer .item:nth-child(2){
+    background: url(../img/bg-3.jpg) no-repeat center/cover;
+}
+.summer .item:nth-child(3){
+    background: url(../img/bg-4.jpg) no-repeat center/cover;
+}
+
+.sale{
+    position: relative;
+    width: 1110px;
+    height: 550px;
+    margin: 0 auto;
+    background: url(../img/bg-5.jpg) no-repeat center/cover;
+}
+.sale .txt{
+    position: absolute;
+    right: 150px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.sale .txt span{
+    color: #dc0345;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+.sale .txt h2{
+    font-size: 60px;
+    margin-bottom: 50px;
+}
+.sale .txt button{
+    width: 170px;
+    height: 50px;
+    background-color: #0315ff;
+    color: #fff;
+    font-size: 12x;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.popular{
+    padding: 80px 0;
+    font-size: 30px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.scroll{
+    width: 1110px;
+    margin: 0 auto;
+}
+.scroll ul{
+    overflow: hidden;
+}
+.scroll ul li{
+    float: left;
+    width: 255px;
+}
+.scroll ul li + li{
+    margin-left: 30px;
+}
+.scroll ul li .pic{
+    position: relative;
+    height: 347px;
+}
+.scroll ul li .pic img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    transition: all .3s ease-out;
+}
+.scroll ul li .pic .heart{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 46px;
+    height: 26px;
+    background-color: #fff;
+    opacity: 0;
+    transition: all .3s ease-out;
+}
+.scroll ul li .pic .btn{
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    width: 216px;
+    height: 50px;
+    background-color: rgb(3,21,255);
+    color: #fff;
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 2px;
+    opacity: 0;
+    transition: all .3s ease-out;
+}
+.scroll ul li .pic img:nth-child(2){
+    opacity: 0;
+}
+.scroll ul li:hover .pic img:nth-child(1){
+    opacity: 0;
+}
+.scroll ul li:hover .pic img:nth-child(2){
+    opacity: 1;
+}
+.scroll ul li .pic .heart{
+    text-align: center;
+    line-height: 26px;
+}
+.scroll ul li .pic .heart i{
+    color: rgb(204,204,204);
+}
+.scroll ul li:hover .pic .heart{
+    opacity: 1;
+}
+.scroll ul li:hover .pic .btn{
+    opacity: 1;
+}
+.scroll ul li .txt{
+    margin-top: 32px;
+}
+.scroll ul li .txt span{
+    display: block;
+    margin-bottom: 4px;
+    color: #787878;
+    font-size: 10px;
+    font-weight: 600;
+}
+.scroll ul li .txt a{
+    color: #222;
+    font-weight: 700;
+}
+.scroll ul li .txt p{
+    margin-top: 10px;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.brand{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 136px;
+    padding: 100px 0;
+    background-color: #f5f7f9;
+}
+.brand div:nth-child(1) img,
+.brand div:nth-child(2) img,
+.brand div:nth-child(4) img,
+.brand div:nth-child(6) img{
+    width: 120px;
+}
+.brand div:nth-child(3) img,
+.brand div:nth-child(5) img{
+    width: 100px;
+}
+
+#toTop{
+    position: fixed;
+    bottom: 60px;
+    right: 60px;
+    width: 40px;
+    height: 40px;
+    background-color: #ff084e;
+    text-align: center;
+    line-height: 40px;
+    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.3);
+}
+#toTop i{
+    color: #fff;
+    font-size: 24px;
+    font-weight: 700;
+}
