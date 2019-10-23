@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #box{
+            position: relative;
+        }
+        #box > div{
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            border: 1px solid #000;
+            background-size: cover;
+            color: transparent;
+            font-size: 24px;
+            text-align: center;
+            line-height: 50px;
+            border-radius: 6px;
+        }
+        #box > div.active{
+            outline: 2px solid red;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+
+    </div>
+    <script>
+        var arr = [
+            [1, 3, 2, 0, 5, 4],
+            [5, 4, 0, 1, 3, 2],
+            [1, 5, 2, 0, 3, 4],
+            [5, 4, 0, 1, 3, 2],
+            [0, 1, 3, 4, 2, 5],
+            [3, 5, 2, 0, 4, 1]
+        ]
+
+        var nArr = []
+        for(var i=0; i<arr.length; i++){
+            for(var j=0; j<arr[i].length; j++){
+                var div = document.createElement('div')
+                div.innerHTML = arr[i][j]
+                div.style.top = i * 50 + 'px'
+                div.style.left = j * 50 + 'px'
+                div.style.backgroundImage = 'url(img/' + arr[i][j] + arr[i][j] + '.png)'
+                box.appendChild(div)
+
+                div.onclick = function(){
+                    if(nArr.length < 2){
+                        if(this.className !== 'active'){
+                            nArr.push(Number(this.innerHTML))
+                            this.className = 'active'
+                        }
+                    }else{
+                        nArr = []
+                        var actives = box.querySelectorAll('.active')
+                        for(var z=0; z<actives.length; z++){
+                            actives[z].className = ''
+                        }
+                        this.className = 'active'
+                        nArr.push(Number(this.innerHTML))
+                    }
+                    // nArr.push(Number(this.innerHTML))
+
+                    if(nArr.length === 2){
+                        if(nArr[0] - nArr[1] === 0){
+                            var ww = box.querySelectorAll('.active')
+                            for(var e=0; e<ww.length; e++){
+                                ww[e].innerHTML = ''
+                                ww[e].className = ''
+                                ww[e].style.backgroundImage = ''
+                                ww[e].onclick = null
+                            }
+                        }
+                        
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>
