@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="trueTo"></div>
+    <button id="b">签到</button>
+    <button id="btn">剩余人名</button>
+    <script>
+        var arr = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h']
+        var str = arr.join('')
+        var nowArr = []
+        trueTo.innerHTML = '实到人名：' + arr.toString()
+        b.onclick = function(){
+            var ipt = prompt('请输入人名')
+            if(arr.indexOf(ipt) === -1){
+                alert('此人不能签到')
+            }else{
+                nowArr.push(ipt)
+            }
+        }
+        btn.onclick = function(){
+            if(nowArr.length === arr.length){
+                alert('全部到位')
+            }else{
+                var reg = new RegExp(nowArr.join('|'), 'g')
+                var noStr = str.replace(reg, '').split('')
+                alert(noStr)
+            }
+        }
+    </script>
+</body>
+</html>
