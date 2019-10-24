@@ -27,9 +27,7 @@
             if(nowArr.length === arr.length){
                 alert('全部到位')
             }else{
-                var reg = new RegExp(nowArr.join('|'), 'g')
-                var noStr = str.replace(reg, '').split('')
-                alert(noStr)
+                alert(str.replace(new RegExp(nowArr.join('|'), 'g'), '').split(''))
             }
         }
     </script>
