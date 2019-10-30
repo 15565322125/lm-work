@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+            background-color: rgb(245,245,245);
+        }
+        #box{
+            position: relative;
+            width: 112px;
+            height: 112px;
+        }
+        #box .big{
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 99;
+            width: 100px;
+            height: 100px;
+            border: 6px solid #fff;
+            background-color: #e16969;
+            cursor: pointer;
+            border-radius: 50%;
+            box-shadow: 3px 3px 10px 0 rgba(0, 0, 0, 0.6);
+        }
+        #box .small{
+            position: absolute;
+            top: 50%;
+            left: 0;
+            z-index: 1;
+            width: 50px;
+            height: 50px;
+            border: 3px solid #fff;
+            margin-top: -28px;
+            cursor: pointer;
+            border-radius: 50%;
+            box-shadow: 3px 3px 10px 0 rgba(0, 0, 0, 0.6);
+            transform: translateX(28px);
+            transition: all 1s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <div class="small" style="background-color: rgb(225, 105, 195);"></div>
+        <div class="small" style="background-color: rgb(181, 105, 225);"></div>
+        <div class="small" style="background-color: rgb(181, 105, 225);"></div>
+        <div class="small" style="background-color: rgb(105, 184, 225);"></div>
+        <div class="small" style="background-color: rgb(105, 225, 212);"></div>
+        <div class="small" style="background-color: rgb(108, 225, 105);"></div>
+        <div class="small" style="background-color: rgb(190, 225, 105);"></div>
+        <div class="small" style="background-color: rgb(225, 161, 105);"></div>
+        <div class="small" style="background-color: rgb(131, 9, 29);"></div>
+        <div class="small" style="background-color: rgb(131, 9, 29);"></div>
+        <div class="big"></div>
+    </div>
+    <script src="jquery.min.js"></script>
+    <script>
+        $('.small').css('z-index', function(idx){
+            return idx + 1
+        })
+        $('#box').attr('flag', true)
+        $('#box').click(function(){
+            if($(this).attr('flag')){
+                $('.small').each(function(idx){
+                    $(this).css('left', 112 + idx * 122)
+                })
+                $(this).attr('flag', '')
+            }else{
+                $('.small').each(function(idx){
+                    $(this).css('left', 0)
+                })
+                $(this).attr('flag', true)
+            }
+        })
+        $('.small').click(function(){
+            $(document.body).css('background-color', $(this).css('background-color'))
+            return false
+        })
+    </script>
+</body>
+</html>
