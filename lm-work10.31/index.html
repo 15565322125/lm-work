@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        i{
+            font-style: normal;
+        }
+        .shop-car{
+            width: 500px;
+        }
+        .shop-car > div::after{
+            display: block;
+            clear: both;
+            content: "";
+        }
+        .shop-car > div > div{
+            float: left;
+            width: 125px;
+            height: 24px;
+            padding: 6px 0;
+            outline: 2px solid #ccc;
+            text-align: center;
+            line-height: 24px;
+        }
+        .shop-car .product-item .add-reduce i,
+        .shop-car .product-item .add-reduce span{
+            display: inline-block;
+            height: 24px;
+            box-sizing: border-box;
+        }
+        .shop-car .product-item .add-reduce span{
+            width: 44px;
+            border: 1px solid #ccc;
+        }
+        .shop-car .product-item .add-reduce i{
+            width: 24px;
+            border: 1px solid #B0C4DE;
+            background-color: #1E90FF;
+            color: #fff;
+            line-height: 22px;
+            cursor: pointer;
+            border-radius: 50%;
+        }
+        .total{
+            padding: 6px 0;
+            outline: 2px solid #ccc;
+            text-indent: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="shop-car">
+        <div class="tit">
+            <div>商品</div>
+            <div>单价</div>
+            <div>数量</div>
+            <div>小计</div>
+        </div>
+        <div class="product-item">
+            <div>
+                <input type="checkbox" id="mate20">
+                <label for="mate20">华为mate20</label>
+            </div>
+            <div>
+                3800
+            </div>
+            <div class="add-reduce">
+                <i class="reduce">-</i>
+                <span class="product-num">1</span>
+                <i class="add">+</i>
+            </div>
+            <div class="unit-price">
+                3800
+            </div>
+        </div>
+        <div class="product-item">
+            <div>
+                <input type="checkbox" id="mi8">
+                <label for="mi8">小米8</label>
+            </div>
+            <div class="unit-price">
+                2800
+            </div>
+            <div class="add-reduce">
+                <i class="reduce">-</i>
+                <span class="product-num">1</span>
+                <i class="add">+</i>
+            </div>
+            <div>
+                2800
+            </div>
+        </div>
+        <div class="total">
+            共<span class="total-num">0</span>件商品
+            合计：
+            <span id="total-money">0</span>
+            元
+        </div>
+    </div>
+    <script src="jquery.min.js"></script>
+    <script>
+        $('.product-num').data('num', 1)
+        $('.add').click(function(){
+            $(this).prev().data('num', $(this).prev().data('num') + 1)
+            $(this).prev().text($(this).prev().data('num'))
+            $(this).parent().next().text($(this).parent().prev().text() * $(this).prev().data('num'))
+            reset()
+        })
+        $('.reduce').click(function(){
+            $(this).next().data('num', ($(this).next().data('num') - 1) ? $(this).next().data('num') - 1 : 1)
+            $(this).next().text($(this).next().data('num'))
+            $(this).parent().next().text($(this).parent().prev().text() * $(this).next().data('num'))
+            reset()
+        })
+        $('input').change(reset)
+        function reset(){
+            $('#total-money').data('tm', 0)
+            $('.total-num').data('tn', 0)
+            $('input:checked').each(function(){
+                $('.total-num').data('tn', $('.total-num').data('tn') + $(this).parent().next().next().children('.product-num').data('num'))
+                $('#total-money').data('tm', $('#total-money').data('tm') + Number($(this).parent().next().next().next().text()))
+            })
+            $('#total-money').text($('#total-money').data('tm'))
+            $('.total-num').text($('.total-num').data('tn'))
+        }
+    </script>
+</body>
+</html>
